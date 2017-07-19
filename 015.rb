@@ -5,11 +5,11 @@
 
 ARGV[0] = 10 if !ARGV[0]
 
-File.open('col1-2.txt', 'r') do |f|
-  length = f.count
-  f.rewind
-  f.each_line.with_index do |line,i|
-    next if length-i > ARGV[0].to_i
-    puts line
-  end
+input = $stdin.readlines
+
+length = input.count
+input.each.with_index do |line,i|
+  next if length-i > ARGV[0].to_i
+  puts line
 end
+
